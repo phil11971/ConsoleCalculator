@@ -30,6 +30,8 @@ public class Validator {
                 if (operandOne == null && operandTwo == null) {
                     operandOne = Roman.toInt(strs[0]);
                     operandTwo = Roman.toInt(strs[2]);
+                    if(operandOne == null || operandTwo == null)
+                        throw new InvalidOperandException("Operand must be from I to X");
                 } else if (operandOne != null && operandTwo == null || operandOne == null && operandTwo != null)
                     throw new IncompatibleOperandsException("Incompatible operands");
             }
